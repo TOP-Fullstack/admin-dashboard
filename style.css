@@ -1,10 +1,23 @@
+/* Set colors to match the pokemon types */
 :root {
-    --purple: linear-gradient(135deg, rgba(25, 27, 42, 1) 31%, rgba(47, 26, 60, 1) 100%);
-    --yellow: linear-gradient(135deg, rgba(25, 27, 42, 1) 31%, rgba(55, 42, 24, 1) 100%);
-    --green: linear-gradient(135deg, rgba(25, 27, 42, 1) 31%, rgba(28, 57, 63, 1) 100%);
-    --dark-blue: linear-gradient(135deg, rgba(25, 27, 42, 1) 31%, rgba(13, 15, 44, 1) 100%);
-    --red: linear-gradient(173deg, rgba(25, 27, 42, 1) 31%, rgba(63, 41, 51, 1) 100%);
-    --light-blue: linear-gradient(135deg, rgba(25, 27, 42, 1) 31%, rgba(18, 43, 59, 1) 100%);
+    --bug: linear-gradient(245deg, rgba(246, 246, 246, 1) 5%, #bed230 80%);
+    --dark: linear-gradient(245deg, rgba(246, 246, 246, 1) 5%, #64553c 80%);
+    --dragon: linear-gradient(245deg, rgba(246, 246, 246, 1) 5%, #bed230 80%);
+    --fairy: linear-gradient(245deg, rgba(246, 246, 246, 1) 5%, #0c87b3 80%);
+    --fighting: linear-gradient(245deg, rgba(246, 246, 246, 1) 5%, #8d191c 80%);
+    --fire: linear-gradient(245deg, rgba(246, 246, 246, 1) 5%, #8d191c 80%);
+    --flying: linear-gradient(245deg, rgba(246, 246, 246, 1) 5%, #0c87b3 80%);
+    --ghost: linear-gradient(245deg, rgba(246, 246, 246, 1) 5%, #745c44 80%);
+    --grass: linear-gradient(245deg, rgba(246, 246, 246, 1) 5%, #bed230 80%);
+    --ground: linear-gradient(245deg, rgba(246, 246, 246, 1) 5%, #904f22 80%);
+    --ice: linear-gradient(245deg, rgba(246, 246, 246, 1) 5%, #c9eaf8 80%);
+    --electric: linear-gradient(245deg, rgba(246, 246, 246, 1) 5%, #ffca05 80%);
+    --normal: linear-gradient(245deg, rgba(246, 246, 246, 1) 5%, #745c44 80%);
+    --poison: linear-gradient(245deg, rgba(246, 246, 246, 1) 5%, #8d191c 80%);
+    --psychic: linear-gradient(245deg, rgba(246, 246, 246, 1) 5%, #f38a20 80%);
+    --rock: linear-gradient(245deg, rgba(246, 246, 246, 1) 5%, #745c44 80%);
+    --steel: linear-gradient(245deg, rgba(246, 246, 246, 1) 5%, #904f22 80%);
+    --water: linear-gradient(245deg, rgba(246, 246, 246, 1) 5%, #83e9f9 80%);
 }
 
 * {
@@ -13,76 +26,13 @@
 }
 
 body {
+    font-family: 'Open Sans', sans-serif;
     display: grid;
     width: 100vw;
     height: 100vh;
-    grid-template: 1fr 4fr / 200px 75%;
-    background-color: #161623;
-    color: white;
-}
-
-/* Side bar */
-
-.sidebar {
-    grid-row: 1 / 4;
-    grid-column: 1 / 2;
-    position: sticky;
-    display: grid;
-    grid-template-rows: 1fr 4fr;
-}
-
-.sidebar-header {
-    grid-row: 1 / 2;
-    display: grid;
-    justify-self: center;
-    align-self: center;
-}
-
-.sidebar-header>img {
-    width: 100px;
-    height: 100px;
-}
-
-.sidebar-nav {
-    grid-row: 2 / 3;
-    display: grid;
-    grid-template: repeat(7, 1fr);
-}
-
-.sidebar-nav ul:nth-child(1) {
-    grid-row: 1;
-}
-
-.sidebar-nav ul:nth-child(2) {
-    grid-row: 7;
-}
-
-.sidebar ul li {
-    display: grid;
-    grid-template: 1fr / 50px 1fr;
-    justify-content: space-between;
-    align-items: center;
-    padding-left: 50px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    opacity: 0.5;
-}
-
-.sidebar-nav img {
-    width: 30px;
-    height: 30px;
-    grid-column: 1 / 2;
-}
-
-.sidebar-nav p {
-    grid-column: 2 / 3;
-    font-size: 1.5rem;
-}
-
-.sidebar ul li:hover {
-    color: green;
-    background: white;
-    opacity: 1;
+    grid-template: 1fr 4fr / 300px 75%;
+    background-color: #f7f8fc;
+    color: rgb(73, 73, 73);
 }
 
 /* Header design */
@@ -90,9 +40,8 @@ body {
 .header {
     grid-row: 1 / 2;
     grid-column: 2 / 4;
-    background: #111111;
     display: grid;
-    grid-template-rows: 1fr 2fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 .header-top {
@@ -110,13 +59,23 @@ body {
 
 .header-top-right {
     display: flex;
-    justify-content: flex-end;
-    margin-right: 250px;
+    width: 20%;
+    justify-content: space-evenly;
+    align-items: center;
+    position: absolute;
+    right: 0;
 }
 
 .header-top img {
-    width: 20px;
-    height: 20px;
+    width: 23px;
+    height: 23px;
+}
+
+#profile-pic {
+    width: 50px;
+    height: 50px;
+    border: 2px solid rgba(128, 128, 128, 0.377);
+    border-radius: 50%;
 }
 
 .header-bottom {
@@ -124,24 +83,101 @@ body {
     height: 100px;
     align-self: center;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    color: black;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
 }
 
-.header-bottom-box {
+.header-bottom-container {
     background: white;
-    width: 100%;
+    width: 85%;
     border-radius: 10px;
-    border: 1px solid grey;
+    border: 2px solid rgba(128, 128, 128, 0.377);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     font-weight: 900;
+    font-size: 1.5rem;
 }
 
-.header-bottom-box p:nth-child(2) {
-    font-size: 2rem;
+.header-bottom-container p {
+    font-weight: 600;
+    margin-bottom: -5px;
+    font-size: 0.7rem;
+    opacity: 0.5;
+}
+
+/* Add hover effect for bottom containers */
+
+/* Side bar */
+
+.sidebar {
+    grid-row: 1 / 4;
+    grid-column: 1 / 2;
+    position: sticky;
+    display: grid;
+    grid-template-rows: 1fr 4fr;
+    color: white;
+    background-color: #363740;
+    border-radius: 0 5px 5px 0;
+}
+
+.sidebar-header {
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    display: grid;
+    justify-items: center;
+    align-items: center;
+}
+
+.sidebar-header>img {
+    width: 60px;
+    height: 60px;
+}
+
+.sidebar-nav {
+    grid-row: 2 / 3;
+}
+
+.sidebar-nav ul:nth-child(1) {
+    grid-row: 1;
+}
+
+.sidebar-nav ul:nth-child(2) {
+    position: absolute;
+    width: 100%;
+    bottom: 25px;
+}
+
+.sidebar ul li {
+    display: grid;
+    grid-template: 1fr / 30px 1fr;
+    align-items: center;
+    padding-left: 40px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    opacity: 0.5;
+}
+
+.sidebar-nav img {
+    width: 18px;
+    height: 18px;
+    grid-column: 1 / 2;
+}
+
+.sidebar-nav p {
+    grid-column: 2 / 3;
+    font-size: 1rem;
+}
+
+.sidebar ul li:hover,
+#active {
+    cursor: pointer;
+    opacity: 1;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.212);
+    border-left: 2px solid white;
 }
 
 /* Main body */
@@ -149,62 +185,62 @@ body {
 .body {
     grid-row: 2 / 4;
     grid-column: 2 / 4;
-    background: #111111;
     display: grid;
     gap: 20px;
     padding: 20px;
-    grid-template: repeat(4, 1fr) / repeat(6, 1fr);
+    grid-template: repeat(4, 1fr) / repeat(5, 1fr);
 }
 
-.body-box {
+.body-random-button,
+.body-info {
     border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 2rem;
+    grid-row: 1 / 2;
+    background-color: white;
+    border: 2px solid rgba(128, 128, 128, 0.377);
 }
 
-.body-box img {
-    width: auto;
-    height: 100%;
-    position: relative;
-    z-index: 1;
+.body-info {
+    grid-row: 2 / 5;
+    font-size: 1rem;
+    padding: 10%;
 }
 
-.body-box:nth-child(even) {
-    background: var(--light-blue)
+.body-design {
+    border-radius: 10px;
+    grid-row: 1/5;
+    grid-column: 1/5;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    color: black;
+    align-items: center;
+    justify-items: center;
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
 
-.body-box:nth-child(odd) {
-    background: var(--purple);
+.body-random-button:hover {
+    cursor: pointer;
+    user-select: none;
+    transform: scale(1.01);
+    background: rgb(215, 215, 215);
+    transition: 0.3s ease;
 }
 
-.body-box:nth-child(1) {
-    grid-row: 1 / 5;
-    grid-column: 3 / 5;
-    background: var(--dark-blue);
+.body-random-button:active {
+    transform: scale(0.99);
+    background: rgb(139, 220, 139);
 }
 
-.body-box:nth-child(2) {
-    grid-row: 1 / 5;
-    grid-column: 1 / 3;
+.body-design-container:nth-child(1) img {
+    width: 100px;
+    height: auto;
 }
 
-.body-box:nth-child(1) h1 {
-    font-size: 15rem;
-    z-index: 0;
-    position: absolute;
-    transform: translate(0, -30%);
-}
-
-.body-box:nth-child(6) {
-    background: var(--yellow)
-}
-
-.body-box:nth-child(3) {
-    background: var(--green);
-}
-
-.body-box:nth-child(5) {
-    background: var(--red);
+.body-design-container:nth-child(1) {
+    color: white;
+    font-size: 2rem;
+    text-align: center;
 }
